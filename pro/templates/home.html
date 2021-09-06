@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+  
+</head>
+
+<style>
+    table, th, td {
+    border: 1px solid black;
+    text-align: center;
+    padding: 15px;
+    margin-top : 30px;
+}
+
+table{
+    border-collapse: collapse;
+    width:80%;
+    margin-left:10%;
+   
+}
+th{
+    background-color : powderblue;
+}
+
+tr:nth-child(odd){
+    background-color: #f2f2f2;
+}
+
+a{
+    text-decoration: none;
+    background-color:black;
+    color : white;
+    padding:7px 10px;
+    font-size: 20px;
+   
+}
+  
+</style>
+<body>
+
+<div> 
+    <div style="margin: 30px 15px;">
+        <a href = "{% url 'create' %}"> create </a>
+    </div>
+    
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>name</th>
+            <th>address</th>
+        </tr>
+
+        {% for q in que %}
+        <tr>
+            <td>{{q.id}}</td>
+            <td>{{q.name}}</td>
+            <td>{{q.title}}</td>
+        </tr>
+
+        {% endfor %}
+    </table>
+</div>
+    
+</body>
+</html>
